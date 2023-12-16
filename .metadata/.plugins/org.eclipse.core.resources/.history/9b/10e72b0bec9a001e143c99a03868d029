@@ -1,0 +1,54 @@
+.cor{
+    background-color: lightgray;
+
+}
+
+.img-fundo{
+    background-image: url(imagem/world\ map\ \(1\).png);
+    height: 425px;
+}
+
+#titulo{
+    color: purple;
+}
+
+.carousel-item{
+    height: 300px;
+    object-fit: cover;
+}
+
+.carrosel-hotel{
+    height: 300px;
+    object-fit: cover;
+}
+
+.titulo{
+    color: purple;
+}
+
+.titulo-carrossel{
+    color: purple;
+}
+
+.texto-carrossel{
+    color: black;
+}
+
+.contato{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.capa{
+	height: 400px;
+    object-fit: cover;
+}
+
+/* .div-btn-form{
+    position: relative;
+}
+.botao-formulario{
+    position: absolute;
+    bottom: 0;
+} */

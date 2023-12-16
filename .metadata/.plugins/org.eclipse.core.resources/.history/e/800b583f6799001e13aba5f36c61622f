@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="../../styles/style.css">
+	<link rel="stylesheet" href="../../styles/mediaquery.css">
+	<script src="https://unpkg.com/@phosphor-icons/web"></script>
+	<title>Reconnect - Atualizar usuário</title>
+</head>
+
+<body class="min-vh-100 d-flex flex-column justify-content-between">
+
+	<header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+              <img src="../../src/imagem/Logo.png" alt="Airline Viagens home" width="150" height="40">
+            </a>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="Destino.html">Destino</a>
+          <a class="nav-link" href="Promocoes.html">Promoções</a>
+          <a class="nav-link" th:href="@{/faleconosco/cadastrar}">Fale Conosco</a>
+          <a class="nav-link" th:href="@{/usuario/cadastrar}">Cadastre-se</a>
+          </div>
+          <hr class="group-divider">
+					<div class="dropdown ms-2">
+						<button class="btn btn-secondary dropdown-toggle " type="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							Admin</button>
+						<ul class="dropdown-menu dropdown-menu-end" style="font-size: 16px;">
+
+							<li><a class="dropdown-item dropdown-link" href="/usuario">Usuários</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/voo">Voos</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/reserva">Reservas</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/faleconosco">Fale Conosco</a></li>
+						</ul>
+					</div>
+          </div>
+        </nav>
+    </header>
+
+
+	<main class="container" style="padding: 20px;">
+		<div class="row">
+			<div class="col-sm-12" style="text-align: center;">
+				<i style="font-size: 40px;" class="bi bi-person-circle"></i>
+				<h1>Atualizar Usuário</h1>
+				<div class="avatar-perfil">
+
+					<img alt="Image" style="overflow: hidden; border-radius: 50%;" class="perfil-usuario-img"
+						height="200px" width="200px" th:src="|/usuario/imagem/${usuario.id}|" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="class=" col-md col-lg"">
+				<form method="POST" th:object="${usuario}" enctype="multipart/form-data">
+					<div class="row g-3">
+						<input type="hidden" th:field="*{id}">
+
+						<div class="col-sm-6">
+							<label for="nome" class="form-label">Nome</label>
+							<input type="text" class="form-control" id="nome" th:field="*{nome}">
+						</div>
+						<div class="col-sm-6">
+							<label for="email" class="form-label">E-mail</label>
+							<input type="email" class="form-control" id="email" th:field="*{email}">
+						</div>
+						<div class="col-sm-6">
+							<label for="senha" class="form-label">Senha</label>
+							<input type="password" class="form-control" id="senha" th:value="*{senha}"
+								th:field="*{senha}" required>
+						</div>
+						<div class="col-sm-6">
+							<label for="telefone" class="form-label">Telefone</label>
+							<input type="text" class="form-control" id="telefone" th:field="*{telefone}">
+						</div>
+						
+						<div class="col-sm-6">
+							<label for="cpf" class="form-label">CPF</label>
+							<input type="text" class="form-control" id="cpf" th:field="*{cpf}">
+						</div>
+						<div class="col-sm-6">
+							<label for="endereco" class="form-label">Endereço</label>
+							<input type="text" class="form-control" id="endereco" th:field="*{endereco}">
+						</div>
+						<div class="col-sm-6">
+							<label for="dataNascimento" class="form-label">Data de Nascimento</label>
+							<input required type="date" class="form-control" id="dataNascimento"
+								th:field="*{dataNascimento}">
+						</div>
+
+						<div class="d-flex justify-content-end gap-1">
+							<a href="/usuario" class=" btn btn-danger">Cancelar</a>
+							<button type="submit" class="btn btn-primary">Salvar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	<footer class="text-center text-white pt-3" style="background-color: white">
+        <div class="text-center text-dark p-3" style="background-color: lightgray;">
+          © 2023 Copyright:
+          <a class="text-dark" th:href="@{/}">Airline.com</a>
+          <img src="../../src/imagem/Logo.png" class="img-fluid" alt="Logo" width="150" height="40">
+        </div>
+      </footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

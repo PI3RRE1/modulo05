@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Viagens</title>
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="src/imagem/localizacao.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+      <nav class="navbar bg-body-tertiary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html" alt="home">
+              <img src="src/imagem/Logo.png" alt="Airline Viagens home" width="150" height="40">
+            </a>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="Destino.html">Destino</a>
+          <a class="nav-link" href="Promocoes.html">Promoções</a>
+          <a class="nav-link" href="Contato.html">Contato</a
+          </div>
+          </div>
+        </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="container-fluid cor">
+          <div class="container-fluid d-flex align-items-center justify-content-center img-fundo">
+              <div class="row g-3">
+                  <div class="col-sm-3 destino">
+                    <label class="form-label" for="nada">Destino</label>
+                    <input type="text" class="form-control" placeholder="Destino" aria-label="City">
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label" for="Ida">Ida</label>
+                    <input class="form-control" type="date" name="" id="">
+                    
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="form-label" for="Volta">Volta</label>
+                    <input class="form-control" type="date" name="" id="">
+                  </div>
+                  <div class="col-sm-  div-btn-form">
+                  <button type="button" class="btn btn-primary botao-formulario"
+                  
+          style="background-color:purple; border: black">
+            Pesquisar
+                  </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container-fluid p-5">
+          <h3 class="titulo">Os melhores destinos para você!!</h3>
+          <br>
+          <h6>Nosso site de viagens oferece as melhores opções de viagens para destinos nacionais. Com uma ampla variedade de pacotes turísticos, você pode escolher entre viagens de luxo ou mais econômicas. Além disso, nosso site oferece informações úteis sobre os destinos, como dicas de viagem e informações sobre atrações turísticas.</h6>
+        </div>
+      </section>
+
+      <section>
+        <div class="album py-5 bg-body-tertiary">
+          <div class="container">
+      
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img src="src/imagem/Maracajaú.jpg" class="card-img-top" alt="imagem Maracajaú">
+                  <div class="card-body">
+                    <h5 class="card-title">Maracajaú</h5>
+                    <p class="card-text"> Conhecido por suas águas mornas e cristalinas e por sua vida marinha. É possível mergulhar e observar a vida marinha, ver de perto vários corais e peixinhos coloridos.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço</a>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Informações</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h100">
+                  <img src="src/imagem/porto-de-galinha.jpg" class="card-img-top" alt="imagem porto-de-galinha">
+                  <div class="card-body">
+                    <h5 class="card-title">Porto de Galinha</h5>
+                    <p class="card-text"> A praia tem mar clarinho, rodeado de resorts e represado por corais, com a agradável temperatura de 28°C – um delicioso passeio de jangada leva até piscinas naturais cheias de peixinhos</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço</a>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">informações</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img src="src/imagem/Dunas de Genipabu.jpg" class="card-img-top" alt="imagem Dunas de Genipabu">
+                  <div class="card-body">
+                    <h5 class="card-title">Dunas de Genipabu</h5>
+                    <p class="card-text">Com diversas atrações e paisagem natural única, elas precisam entrar no seu roteiro pela capital potiguar. As dunas ficam na cidade de Natal.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço</a>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Informações</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img src="src/imagem/Jericoacoara.jpg" class="card-img-top" alt="imagem Jericoacoara">
+                  <div class="card-body">
+                    <h5 class="card-title">Jericoacoara</h5>
+                    <p class="card-text"> Localizada no oeste do litoral do Ceará, entre dunas e um mar de águas mornas e calmas, Jericoacoara se tornou área de proteção ambiental em 1984.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço</a>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Informações</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img src="src/imagem/Fernando de Noronha.jpg" class="card-img-top" alt="imagem Fernando de Noronha">
+                  <div class="card-body">
+                    <h5 class="card-title">Fernando de Noronha</h5>
+                    <p class="card-text">Fernando de Noronha é o destino perfeito para praticar mergulho ou para se iniciar no mergulho, seja através do snorkeling ou do mergulho com cilindro.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço</a>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Informações</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow-sm h-100">
+                  <img src="src/imagem/Arquipélago de Abrolhos.jpg" class="card-img-top" alt="imagem Arquipélago de Abrolhos">
+                  <div class="card-body">
+                    <h5 class="card-title">Arquipélago de Abrolhos</h5>
+                    <p class="card-text">O Arquipélago de Abrolhos se localiza no oceano Atlântico, a cerca de 70 km do largo de Caravelas, estado da Bahia. As ilhas que o compõem ficam distribuídas em uma área aproximada de 910 km².</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço</a>
+                        <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Informações</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>   
+    
+    <footer class="text-center text-white pt-3" style="background-color: white">
+      <div class="text-center text-dark p-3" style="background-color: lightgray;">
+        © 2023 Copyright:
+        <a class="text-dark" href="index.html">Airline.com</a>
+        <img src="src/imagem/Logo.png" class="img-fluid" alt="Logo" width="150" height="40">
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>    

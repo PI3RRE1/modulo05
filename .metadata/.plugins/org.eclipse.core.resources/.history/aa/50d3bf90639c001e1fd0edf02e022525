@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Viagens</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="src/imagem/localizacao.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+</head>
+<body>
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+              <img src="../../src/imagem/Logo.png" alt="Airline Viagens home" width="150" height="40">
+            </a>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="Destino.html">Destino</a>
+          <a class="nav-link" th:href="@{/promocoes}">Promoções</a>
+          <a class="nav-link" th:href="@{/faleconosco/cadastrar}">Fale Conosco</a>
+          <a class="nav-link" th:href="@{/usuario/cadastrar}">Cadastre-se</a>
+          </div>
+          <hr class="group-divider">
+					<div class="dropdown ms-2">
+						<button class="btn btn-secondary dropdown-toggle " type="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							Admin</button>
+						<ul class="dropdown-menu dropdown-menu-end" style="font-size: 16px;">
+
+							<li><a class="dropdown-item dropdown-link" href="/usuario">Usuários</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/voo">Voos</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/reserva">Reservas</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/faleconosco">Fale Conosco</a></li>
+						</ul>
+					</div>
+          </div>
+        </nav>
+    </header>
+
+      <main>
+        <section>
+          <div class="container-fluid cor">
+            <div class="container-fluid d-flex align-items-center justify-content-center img-fundo">
+                <div class="row g-3">
+                    <div class="col-sm-3 destino">
+                      <label class="form-label" for="nada">Destino</label>
+                      <input type="text" class="form-control" placeholder="Destino" aria-label="City">
+                    </div>
+                    <div class="col-sm-3">
+                      <label class="form-label" for="Ida">Ida</label>
+                      <input class="form-control" type="date" name="" id="">
+                      
+                    </div>
+                    <div class="col-sm-3">
+                      <label class="form-label" for="Volta">Volta</label>
+                      <input class="form-control" type="date" name="" id="">
+                    </div>
+                    <div class="col-sm- div-btn-form">
+                    <button type="button" class="btn btn-primary botao-formulario"
+                    
+            style="background-color:purple; border: black">
+              Pesquisar
+                    </button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+         
+        <section>
+            <div class="container-fluid d-flex justify-content-center">
+              <div class="container row d-flex justify-content-around py-3">
+                <div class="card col-lg-3 col-md-5 col-12 my-3">
+                  <img src="src/imagem/rio-de-janeiro.jpg" class="card-img-top" alt="imagem Rio de Janeiro">
+                  <div class="card-body">
+                    <h5 class="card-title">Rio de Janeiro</h5>
+                    <p class="card-text">Gostaria de visitar o Rio de Janeiro? Lá tem os pontos turísticos mais famosos do Brasil, como o Cristo Redentor e o Pão de Açúcar.</p>
+                    <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço $</a>
+                  </div>
+                </div>
+                <div class="card col-lg-3 col-md-5 col-12 my-3">
+                  <img id="imagem-camboriu" src="src/imagem/cataratas-do-iguacu-.jpg" class="card-img-top" alt="imagem cataratas do iguaçu">
+                  <div class="card-body">
+                    <h5 class="card-title">cataratas do Iguaçu</h5>
+                    <p class="card-text">Você já visitou as Cataratas do Iguaçu? As quedas de água são simplesmente deslumbrantes e a natureza ao redor é de tirar o fôlego.</p>
+                    <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço $</a>
+                  </div>
+                </div>
+                <div class="card col-lg-3 col-md-5 col-12 my-3">
+                  <img src="src/imagem/Bahia.jpg" class="card-img-top" alt="imagem Bahia Salvador">
+                  <div class="card-body">
+                    <h5 class="card-title">Bahia-Salvador</h5>
+                    <p class="card-text">Que tal visitar o centro histórico e o Pelourinho, que reúne edifícios antigos da cidade e é um passeio imperdível.</p>
+                    <a href="#" class="btn btn-primary" style="background-color:purple; border: black">Preço $</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </section>
+      </main>
+
+      <footer class="text-center text-white pt-3" style="background-color: white">
+        <div class="text-center text-dark p-3" style="background-color: lightgray;">
+          © 2023 Copyright:
+          <a class="text-dark" th:href="@{/}">Airline.com</a>
+          <img src="src/imagem/Logo.png" class="img-fluid" alt="Logo" width="150" height="40">
+        </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
