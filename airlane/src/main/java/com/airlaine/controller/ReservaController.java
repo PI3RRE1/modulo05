@@ -1,5 +1,57 @@
 package com.airlaine.controller;
 
-public class ReservaController {
+import java.io.IOException;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.airlaine.model.Reserva;
+import com.airlaine.repository.ReservaRepository;
+@Controller
+@RequestMapping("/reserva")
+public class ReservaController {
+	@Autowired
+	private ReservaRepository reservaRepository;
+	
+	// lista todos os dados do banco usuario
+			@GetMapping
+			public ModelAndView listar() {
+				ModelAndView modelAndView = new ModelAndView("reserva/listar.html");
+		 
+				List<Reserva> reserva = reservaRepository.findAll();
+				modelAndView.addObject("reserva", reserva);
+		 
+				return modelAndView;
+			}
+			
+			// chama a view cadastrar e passa um objeto vazio
+			@GetMapping("/cadastrar")
+			public ModelAndView cadastrar() {
+				ModelAndView modelAndView = new ModelAndView("reserva/cadastro");
+		 
+				modelAndView.addObject("reserva", new Reserva());
+		 
+				return modelAndView;
+			}
+			
+			
+			 
+			@PostMapping("/cadastrar")
+			public ModelAndView cadastrar(Reserva reserva)  throws IOException {
+		 
+
+				
+		 
+				ModelAndView modelAndView = new ModelAndView("redirect:/reserva");
+		 
+				reservaRepository.save(reserva);
+				
+		 
+				return modelAndView;
+			}
 }

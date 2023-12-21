@@ -7,11 +7,10 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="../styles/style.css">
-	<link rel="stylesheet" href="../styles/mediaquery.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/mediaquery.css">
 	<script src="https://unpkg.com/@phosphor-icons/web"></script>
-	<html xmlns:th="http://www.thymeleaf.org">
-	<title>Reconnect - Fale Conosco</title>
+	<title>Airlaine - Reserva</title>
 </head>
 
 <body class="min-vh-100 d-flex flex-column justify-content-between">
@@ -29,8 +28,9 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="Destino.html">Destino</a>
-          <a class="nav-link" href="Promocoes.html">Promoções</a>
-          <a class="nav-link" href="/faleconosco">Fale Conosco</a>
+          <a class="nav-link" th:href="@{/promocoes}">Promoções</a>
+          <a class="nav-link" th:href="@{/faleconosco/cadastrar}">Fale Conosco</a>
+          <a class="nav-link" th:href="@{/usuario/cadastrar}">Cadastre-se</a>
           </div>
           <hr class="group-divider">
 					<div class="dropdown ms-2">
@@ -40,9 +40,8 @@
 						<ul class="dropdown-menu dropdown-menu-end" style="font-size: 16px;">
 
 							<li><a class="dropdown-item dropdown-link" href="/usuario">Usuários</a></li>
-							<li><a class="dropdown-item dropdown-link" href="/servico">Serviços</a></li>
-							<li><a class="dropdown-item dropdown-link" href="/contrato">Contratos</a></li>
-							<li><a class="dropdown-item dropdown-link" href="/contato">Contatos</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/voo">Voos</a></li>
+							<li><a class="dropdown-item dropdown-link" href="/reserva">Reservas</a></li>
 							<li><a class="dropdown-item dropdown-link" href="/faleconosco">Fale Conosco</a></li>
 						</ul>
 					</div>
@@ -50,45 +49,61 @@
         </nav>
     </header>
 
-	<div class="position-relative overflow-hidden text-center ">
-		<img class="capinha card-img-top" src="../images/capa-contato.jpg"
-			alt="Imagem focada em duas mãos usando o celular">
-
-	</div>
-
-	<main class="container" style="padding: 20px;">
-		<div class="row">
-			<div class="col-sm-12" style="text-align: center;">
-				<i style="font-size: 40px;" class="ph ph-chat-centered-text"></i>
-				<h1>Fale Conosco</h1>
+	<main class="container">
+		<div style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+			<i style="font-size: 40px;" class="bi bi-people"></i>
+			<div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+				<h1>Usuários</h1>
+				<a th:href="@{/reserva/cadastrar}" class="btn btn-primary" style="background-color:purple; border: black">Cadastrar</a>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-sm-12">
-				<form method="POST" th:object="${faleconosco}">
-					<div class="mb-3">
-						<label for="nome" class="form-label">Nome</label>
-						<input type="text" class="form-control" id="nome" th:field="*{nome}" required>
-					</div>
-					<div class="mb-3">
-						<label for="email" class="form-label">E-mail</label>
-						<input type="email" class="form-control" id="email" th:field="*{email}" required>
-					</div>
-
-					<div class="mb-3">
-						<label for="mensagem" class="form-label">Mensagem</label>
-						<textarea rows="5" class="form-control" id="mensagem" th:field="*{mensagem}"
-							required> </textarea>
-					</div>
-					<br>
-					<div class="d-flex justify-content-end gap-1">
-						<a href="/faleconosco" class=" btn btn-danger">Cancelar</a>
-						<button type="submit" class="btn btn-primary">Salvar</button>
-					</div>
-				</form>
+			<div class="col-sm-12 overflow-x-auto">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Origem</th>
+							<th scope="col">Companhia_aerea</th>
+							<th scope="col">Aeroporto</th>
+							<th scope="cl">Preco</th>
+							<th scope="col">DataReserva</th>
+							<th scope="col">dataEmbarque</th>
+							<th scope="col">Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="reserva : ${reservas}">
+							<th scope="row" th:text="${reserva.id}"></th>
+<!--							<td>-->
+<!--								<a class="username" th:text="${usuario.nome}"-->
+<!--									th:href="@{/usuario/{id} (id=${usuario.id})}"></a>-->
+<!--							</td>-->
+							
+                            <td th:text="${reserva.origem}"></td>
+							<td th:text="${reserva.companhia_aerea}"></td>
+							<td th:text="${reserva.aeroporto}"></td>
+							<td th:text="${{reserva.preco}}"></td>
+							<td th:text="${reserva.dataReserva}"></td>
+							<td th:text="${reserva.dataEmbarque}"></td>
+							<td>
+								<a th:href="@{/reserva/{id}/editar (id=${reserva.id})}"
+									class="btn btn-primary btn-edit mb-1">
+									Editar
+								</a>
+								<a th:href="@{/reserva/{id}/excluir (id=${reserva.id})}"
+									class="btn btn-danger btn-edit mb-1"
+									onclick="return confirm('Tem certeza que deseja excluir o usuário?');">
+									Excluir
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
+
 	</main>
 
 	<footer class="text-center text-white pt-3" style="background-color: white">

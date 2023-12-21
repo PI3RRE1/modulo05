@@ -10,8 +10,7 @@
 	<link rel="stylesheet" href="../styles/style.css">
 	<link rel="stylesheet" href="../styles/mediaquery.css">
 	<script src="https://unpkg.com/@phosphor-icons/web"></script>
-	<html xmlns:th="http://www.thymeleaf.org">
-	<title>Reconnect - Fale Conosco</title>
+	<title>Airlaine - Cadastrar Usuário</title>
 </head>
 
 <body class="min-vh-100 d-flex flex-column justify-content-between">
@@ -28,7 +27,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="Destino.html">Destino</a>
+          <a class="nav-link active" aria-current="page" th:href="@{/destino}">Destino</a>
           <a class="nav-link" th:href="@{/promocoes}">Promoções</a>
           <a class="nav-link" th:href="@{/faleconosco/cadastrar}">Fale Conosco</a>
           <a class="nav-link" th:href="@{/usuario/cadastrar}">Cadastre-se</a>
@@ -50,40 +49,75 @@
         </nav>
     </header>
 
-	<main class="container" style="padding: 20px;">
-		<div class="row">
-			<div class="col-sm-12" style="text-align: center;">
-				<i style="font-size: 40px;" class="ph ph-chat-centered-text"></i>
-				<h1>Fale Conosco</h1>
-			</div>
+	<div class="position-relative overflow-hidden">
+		
+		<div class="text-center">
+			<h2 class="display-5">FAÇA SUA RESERVA</h2>
+			<p class="lead">Reserve uma viagem para você e sua familia</p>
 		</div>
 
-		<div class="row">
-			<div class="col-sm-12">
-				<form method="POST" th:object="${faleconosco}">
-					<div class="mb-3">
-						<label for="nome" class="form-label">Nome</label>
-						<input type="text" class="form-control" id="nome" th:field="*{nome}" required>
-					</div>
-					<div class="mb-3">
-						<label for="email" class="form-label">E-mail</label>
-						<input type="email" class="form-control" id="email" th:field="*{email}" required>
-					</div>
+		<div class="container" style="padding: 20px;">
 
-					<div class="mb-3">
-						<label for="mensagem" class="form-label">Mensagem</label>
-						<textarea rows="5" class="form-control" id="mensagem" th:field="*{mensagem}"
-							required> </textarea>
-					</div>
-					<br>
-					<div class="d-flex justify-content-end gap-1">
-						<a href="/faleconosco" class=" btn btn-danger">Cancelar</a>
-						<button type="submit" class="btn btn-primary">Salvar</button>
-					</div>
-				</form>
+			<div class="row">
+				<div class="col-md col-lg">
+					<form method="POST" th:object="${reserva}" enctype="multipart/form-data">
+						<div class="row g-3">
+							<div class="col-sm-6">
+								<label for="nome" class="form-label">Origem</label>
+								<input type="text" class="form-control" id="origem" th:field="*{origem}" placeholder="São Paulo" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="nome" class="form-label">Destino</label>
+								<input type="text" class="form-control" id="destino" th:field="*{destino}" placeholder="Sergipe" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="nome" class="form-label">Destino</label>
+								<input type="text" class="form-control" id="numero_assento" th:field="*{numero_assento}" placeholder="121" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="nome" class="form-label">Numero de Pessoas</label>
+								<input type="text" class="form-control" id="num_pessoas" th:field="*{num_pessoas}" placeholder="5" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="email" class="form-label">Companhia Aerea</label>
+								<input type="text" class="form-control" id="companhia_aerea" th:field="*{companhia_aerea}"
+									placeholder="Latam" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="telefone" class="form-label">Aeroporto</label>
+								<input type="text" class="form-control" id="aeroporto" th:field="*{aeroporto}"
+									placeholder="Congonhas" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="preco" class="form-label">Preço</label>
+								<input type="text" class="form-control" id="preco" th:field="*{preco}" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="dataNascimento" class="form-label">Data da Reserva</label>
+								<input type="date" class="form-control" id="dataNascimento" th:field="*{dataReserva}"
+									required>
+							</div>
+							
+							<div class="col-sm-6">
+								<label for="dataNascimento" class="form-label">Data de Embarque</label>
+								<input type="date" class="form-control" id="dataNascimento" th:field="*{dataEmbarque}"
+									required>
+							</div>
+							
+
+							<br>
+
+							<button type="submit" class="w-100 btn btn-primary btn-lg" style="background-color:purple; border: black">Cadastrar</button>
+
+						</div>
+					</form>
+				</div>
 			</div>
+
+			<hr class="my-4">
+
 		</div>
-	</main>
+	</div>
 
 	<footer class="text-center text-white pt-3" style="background-color: white">
         <div class="text-center text-dark p-3" style="background-color: lightgray;">
